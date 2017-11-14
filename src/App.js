@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
+import logo from '/marvel/src/logo.png'; 
+// ./logo.png
 import './App.css';
 import FilteredList from './FilteredList';
 

@@ -46,7 +46,7 @@ class Movie extends Component {
             {this.props.item.name} ({this.props.item.year})
           </div>
           <div className="poster">
-            <img src={this.props.item.poster} alt="poster" height="150px"/>
+            <img src={process.env.PUBLIC_URL + this.props.item.poster} alt="poster" height="150px"/>
           </div>
           <div className="movie-info">
             <p>Release Date: {this.findMonth(this.props.item.month)} {this.props.item.day}, {this.props.item.year}</p>

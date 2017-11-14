@@ -50,7 +50,7 @@ class List extends Component {
 
     renderList() {
         const items = this.props.items.map(item => {
-          return <Movie item={item} />
+          return <Movie item={item} key={item.name} />
         });
 
         return items;

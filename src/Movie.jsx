@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
-import Movie from "./Movie";
 
-
-/*
-  The list component will take the list of items passed in as a property
-  and create an HTML list with those item. In this example, we are passing in the 
-  filtered produce list, but this component can be used for other types of items 
-  as long as it has a name.
-*/
-class List extends Component {
-
+class Movie extends Component {
 
     findMonth(number) {
       if (number == 1) {
@@ -48,21 +39,26 @@ class List extends Component {
     }
 
 
-    renderList() {
-        const items = this.props.items.map(item => {
-          return <Movie item={item} />
-        });
-
-        return items;
-    }
-
     render() {
-        return (
-          <div className="list">
-            {this.renderList()}
+      return (
+        <div key={this.props.item.name} className="movie">
+          <div className="movie-title">
+            {this.props.item.name} ({this.props.item.year})
           </div>
-          );
+          <div className="poster">
+            <img src={this.props.item.poster} alt="poster" height="150px"/>
+          </div>
+          <div className="movie-info">
+            <p>Release Date: {this.findMonth(this.props.item.month)} {this.props.item.day}, {this.props.item.year}</p>
+            <p>Director: {this.props.item.director}</p>
+            <p>Runtime: {this.props.item.runtime} minutes</p>
+            <p>Box Office Earnings: 
+              ${this.findBoxOffice(this.props.item.boxoffice)}</p>
+          </div>
+        </div>
+        );
     }
+
 }
 
-export default List;
+export default Movie;

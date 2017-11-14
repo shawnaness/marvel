@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from '/marvel/src/logo.png'; 
-// ./logo.png
 import './App.css';
+import Header from './Header';
 import FilteredList from './FilteredList';
 
 import * as movies from './movies.json';
@@ -15,10 +14,7 @@ class App extends Component {
                   The list of produce will be passed into the FilteredList
                   component the items property.
                 */}
-                <header className="header">
-                  <img src={logo} className="logo" alt="logo" />
-                  <h1 className="title">marvel madness</h1>
-                </header>
+                <Header />
                 <FilteredList items={movies} />
             </div>
         );

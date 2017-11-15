@@ -150,35 +150,34 @@ class FilteredList extends Component {
                     <input className="search" type="text" placeholder="Search" onChange={this.onSearch} />
                     <h3>Superhero</h3>
                     <div className="superhero-logos">
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/captainamerica.png"} 
-                            id="captainamerica" alt="Captain America" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/ironman.png"}
-                            id="ironman" alt="Iron Man" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/thor.png"}
-                            id="thor" alt="Thor" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/hulk.png"} 
-                            id="hulk" alt="Hulk" onClick={this.superheroClicked} />  
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/avengers.png"}
-                            id="avengers" alt="Avengers" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/spiderman.png"}
-                            id="spiderman" alt="Spiderman" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/guardians.png"}
-                            id="guardians" alt="Guardians" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/antman.png"}
-                            id="antman" alt="Ant Man" onClick={this.superheroClicked} />    
-                        <img className="select-superhero" src={process.env.PUBLIC_URL + "logos/doctorstrange.png"}
-                            id="doctorstrange" alt="Doctor Strange" onClick={this.superheroClicked} />
-                        <Button className="button" bsStyle="primary" onClick={this.superheroDeselected}>
-                            {this.state.superheroDeselect}</Button>    
+                        <img className="select-superhero" src="logos/captainamerica.png" id="captainamerica" alt="Captain America"
+                            onClick={this.superheroClicked} />
+                        <img className="select-superhero" src="logos/ironman.png" id="ironman" alt="Iron Man"
+                            onClick={this.superheroClicked} />
+                        <img className="select-superhero" src="logos/thor.png" id="thor" alt="Thor"
+                            onClick={this.superheroClicked} />
+                        <img className="select-superhero" src="logos/hulk.png" id="hulk" alt="Hulk"
+                            onClick={this.superheroClicked} />  
+                        <img className="select-superhero" src="logos/avengers.png" id="avengers" alt="Avengers"
+                            onClick={this.superheroClicked} />
+                        <img className="select-superhero" src="logos/spiderman.png" id="spiderman" alt="Spiderman"
+                            onClick={this.superheroClicked} />
+                        <img className="select-superhero" src="logos/guardians.png" id="guardians" alt="Guardians"
+                            onClick={this.superheroClicked} />
+                        <img className="select-superhero" src="logos/antman.png" id="antman" alt="Ant Man"
+                            onClick={this.superheroClicked} />    
+                        <img className="select-superhero" src="logos/doctorstrange.png" id="doctorstrange" alt="Doctor Strange"
+                            onClick={this.superheroClicked} />
+                        <Button className="button" bsStyle="primary" onClick={this.superheroDeselected}>{this.state.superheroDeselect}</Button>    
                     </div>
                     <h3>Phase</h3>
                     <div className="phase-logos">
-                        <img className="select-phase" src={process.env.PUBLIC_URL + "phases/I.png"} 
-                            id="Phase One" alt="Phase One" onClick={this.phaseClicked} />
-                        <img className="select-phase" src={process.env.PUBLIC_URL + "phases/II.png"}
-                            id="Phase Two" alt="Phase Two" onClick={this.phaseClicked} />
-                        <img className="select-phase" src={process.env.PUBLIC_URL + "phases/III.png"}
-                            id="Phase Three" alt="Phase Three" onClick={this.phaseClicked} />
+                        <img className="select-phase" src="phases/I.png" id="Phase One" alt="Phase One"
+                            onClick={this.phaseClicked} />
+                        <img className="select-phase" src="phases/II.png" id="Phase Two" alt="Phase Two"
+                            onClick={this.phaseClicked} />
+                        <img className="select-phase" src="phases/III.png" id="Phase Three" alt="Phase Three"
+                            onClick={this.phaseClicked} />
                         <Button className="button" bsStyle="primary" onClick={this.phaseDeselected}>{this.state.phaseDeselect}</Button>
                     </div>
                     <h3>Sort</h3>

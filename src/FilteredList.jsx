@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DropdownButton, MenuItem, Button } from 'react-bootstrap';
+import { DropdownButton, MenuItem } from 'react-bootstrap';
 import List from './List';
 
 class FilteredList extends Component {
@@ -9,9 +9,7 @@ class FilteredList extends Component {
         this.state = {
             search: "",
             selectedSuperheroes: new Set(),
-            superheroDeselect: "Deselect All",
             selectedPhases: new Set(),
-            phaseDeselect: "Deselect All",
             sort: "Date"
         };
         this.state.selectedSuperheroes.add("captainamerica")
@@ -79,33 +77,6 @@ class FilteredList extends Component {
         this.setState({selectedSuperheroes: this.state.selectedSuperheroes})
     }
 
-    superheroDeselect = (event) => {
-        var logos = document.getElementsByClassName("select-superhero");
-        if (this.state.superheroDeselect === "Deselect All") {
-            this.setState({selectedSuperheroes: new Set()})
-            this.setState({superheroDeselect: "Select All"})
-            for (var logo of logos) {
-                logo.style.filter = "grayscale(1)";
-            }
-        } else {            
-            this.setState({selectedSuperheroes: new Set()})
-            this.state.selectedSuperheroes.add("captainamerica")
-            this.state.selectedSuperheroes.add("ironman")
-            this.state.selectedSuperheroes.add("thor")
-            this.state.selectedSuperheroes.add("hulk")
-            this.state.selectedSuperheroes.add("avengers")
-            this.state.selectedSuperheroes.add("spiderman")
-            this.state.selectedSuperheroes.add("antman")
-            this.state.selectedSuperheroes.add("doctorstrange")
-            this.state.selectedSuperheroes.add("guardians")
-            this.setState({selectedSuperheroes: this.state.selectedSuperheroes})
-            this.setState({superheroDeselect: "Deselect All"})
-            for (var logo of logos) {
-                logo.style.filter = "none";
-            }
-        }
-    }
-
     phaseClicked = (event) => {
         if (this.state.selectedPhases.has(event.target.id)) {
             event.target.style.opacity = "0.2";
@@ -115,27 +86,6 @@ class FilteredList extends Component {
             this.state.selectedPhases.add(event.target.id);
         }
         this.setState({selectedPhases: this.state.selectedPhases})
-    }
-
-    phaseDeselect = (event) => {
-        var phases = document.getElementsByClassName("select-phase");
-         if (this.state.phaseDeselect === "Deselect All") {
-            this.setState({selectedPhases: new Set()})
-            this.setState({phaseDeselect: "Select All"})
-            for (var phase of phases) {
-                phase.style.opacity = "0.2";
-            }
-        } else {            
-            this.setState({selectedPhases: new Set()})
-            this.state.selectedPhases.add("Phase One")
-            this.state.selectedPhases.add("Phase Two")
-            this.state.selectedPhases.add("Phase Three")
-            this.setState({selectedPhases: this.state.selectedPhases})
-            this.setState({phaseDeselect: "Deselect All"})
-            for (var phase of phases) {
-                phase.style.opacity = "1";
-            }
-        }
     }
 
     sortSelected = (key, event) => {
@@ -152,9 +102,9 @@ class FilteredList extends Component {
                     <h3>Superhero</h3>
                     <div className="superhero-logos">
                         <img className="select-superhero" src="logos/captainamerica.png" id="captainamerica" alt="Captain America"
-                            onClick={this.superheroClicked} ref="selectSuperhero" />
+                            onClick={this.superheroClicked} />
                         <img className="select-superhero" src="logos/ironman.png" id="ironman" alt="Iron Man"
-                            onClick={this.superheroClicked} ref="selectSuperhero" />
+                            onClick={this.superheroClicked} />
                         <img className="select-superhero" src="logos/thor.png" id="thor" alt="Thor"
                             onClick={this.superheroClicked} />
                         <img className="select-superhero" src="logos/hulk.png" id="hulk" alt="Hulk"
@@ -163,14 +113,13 @@ class FilteredList extends Component {
                             onClick={this.superheroClicked} />
                         <img className="select-superhero" src="logos/spiderman.png" id="spiderman" alt="Spiderman"
                             onClick={this.superheroClicked} />
-                        <img className="select-superhero" src="logos/antman.png" id="antman" alt="Ant Man"
-                            onClick={this.superheroClicked} />  
                         <img className="select-superhero" src="logos/guardians.png" id="guardians" alt="Guardians"
                             onClick={this.superheroClicked} />
+                        <img className="select-superhero" src="logos/antman.png" id="antman" alt="Ant Man"
+                            onClick={this.superheroClicked} />    
                         <img className="select-superhero" src="logos/doctorstrange.png" id="doctorstrange" alt="Doctor Strange"
                             onClick={this.superheroClicked} />    
                     </div>
-                    <Button bsStyle="primary" className="button" onClick={this.superheroDeselect}>{this.state.superheroDeselect}</Button>
                     <h3>Phase</h3>
                     <div className="phase-logos">
                         <img className="select-phase" src="phases/I.png" id="Phase One" alt="Phase One"
@@ -180,13 +129,12 @@ class FilteredList extends Component {
                         <img className="select-phase" src="phases/III.png" id="Phase Three" alt="Phase Three"
                             onClick={this.phaseClicked} />
                     </div>
-                    <Button bsStyle="primary" className="button" onClick={this.phaseDeselect}>{this.state.phaseDeselect}</Button>
                     <h3>Sort</h3>
-                    <DropdownButton bsStyle="primary" className="dropdown" id="sort-dropdown" title={this.state.sort}>
+                    <DropdownButton className="dropdown" id="sort-dropdown" title={this.state.sort}>
                         <MenuItem eventKey="Date" onSelect={this.sortSelected}>Date</MenuItem>
                         <MenuItem eventKey="Title" onSelect={this.sortSelected}>Title</MenuItem>
                         <MenuItem eventKey="Runtime" onSelect={this.sortSelected}>Runtime</MenuItem>
-                        <MenuItem eventKey="Box Office" onSelect={this.sortSelected}>Box Office</MenuItem>
+                        <MenuItem eventKey="Box Office" onSelect={this.sortSelected}>Box Office Earnings</MenuItem>
                     </DropdownButton>
                 </div>
             </div>

@@ -43,9 +43,7 @@ class Movie extends Component {
       return (
         <div key={this.props.item.name} className="movie">
           <div className="movie-title">
-            <a href={this.props.item.imdb}>
-              {this.props.item.name} ({this.props.item.year})
-            </a>
+            {this.props.item.name} ({this.props.item.year})
           </div>
           <div className="poster">
             <img className="poster-image" src={process.env.PUBLIC_URL + this.props.item.poster} alt="poster"/>

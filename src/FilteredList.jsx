@@ -70,9 +70,11 @@ class FilteredList extends Component {
     superheroClicked = (event) => {
         if (this.state.selectedSuperheroes.has(event.target.id)) {
             event.target.style.filter = "grayscale(1)";
+            event.target.style.opacity = "0.5";
             this.state.selectedSuperheroes.delete(event.target.id);
         } else {
             event.target.style.filter = "none";
+            event.target.style.opacity = "1";
             this.state.selectedSuperheroes.add(event.target.id);
         }
         this.setState({selectedSuperheroes: this.state.selectedSuperheroes})
@@ -85,6 +87,7 @@ class FilteredList extends Component {
             this.setState({superheroDeselect: "Select All"})
             for (var x of logos) {
                 x.style.filter = "grayscale(1)";
+                x.style.opacity = "0.5";
             }
         } else {
             this.setState({selectedSuperheroes: new Set()})
@@ -101,13 +104,14 @@ class FilteredList extends Component {
             this.setState({superheroDeselect: "Deselect All"})
             for (var y of logos) {
                 y.style.filter = "none";
+                y.style.opacity = "1";
             }
         }
     }
 
     phaseClicked = (event) => {
         if (this.state.selectedPhases.has(event.target.id)) {
-            event.target.style.opacity = "0.2";
+            event.target.style.opacity = "0.3";
             this.state.selectedPhases.delete(event.target.id);
         } else {
             event.target.style.opacity = "1";
@@ -122,7 +126,7 @@ class FilteredList extends Component {
             this.setState({selectedPhases: new Set()})
             this.setState({phaseDeselect: "Select All"})
             for (var x of phases) {
-                x.style.opacity = "0.2";
+                x.style.opacity = "0.3";
             }
         } else {
             this.setState({selectedPhases: new Set()})

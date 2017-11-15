@@ -11,11 +11,19 @@ import Movie from "./Movie";
 class List extends Component {
 
     renderList() {
-        const items = this.props.items.map(item => {
-          return <Movie item={item} key={item.name} />
-        });
+        if (this.props.items.length === 0) {
+          const message = 
+            <h3>No movies found. Try altering your search
+            options!</h3>;
+          return message;
+        }
+        else {
+          const items = this.props.items.map(item => {
+            return <Movie item={item} key={item.name} />
+          });
 
-        return items;
+          return items;
+        }
     }
 
     render() {

@@ -1,17 +1,18 @@
 View the completed project at https://shawnaness.github.io/marvel.
-Alternatively, all the files are included in this zip file; run "npm start"
-from the terminal to run the project on http://localhost:3000/.
+Alternatively, all the files are included in this zip file; from the
+marvel directory, run "npm start" from the terminal to run the project
+on http://localhost:3000/.
 
 Marvel Madness is a project that uses React.js to create a live filtering and
-sorting webpage for all Marvel Cinematic Universe movies. There are so many 
+sorting webpage for all Marvel Cinematic Universe movies. There are so many
 Marvel movies and heroes that it can be difficult to keep track of them all;
 the goal of this webpage is to allow users to search, filter, and sort Marvel
 movies to help them keep their Marvel Cinematic Universe facts in check!
 
 User Interface Design Principles:
-	I used usability principles taught in class to improve the usability of 
-my webpage. I started with simple dropdowns for filtering options. However, 
-I realized that users might want to filter by multiple phases or multiple 
+	I used usability principles taught in class to improve the usability of
+my webpage. I started with simple dropdowns for filtering options. However,
+I realized that users might want to filter by multiple phases or multiple
 superheroes. I also realized that it would be much more visually appealing to
 use the logos of the superheroes; this would also make the interface easier to
 learn. Most users likely recognize some of the logos, and the "Deselect All"
@@ -19,13 +20,13 @@ button encourages them to play around with toggling the superhero selections.
 Users can quickly play around with the logos they don't recognize to determine
 what they represent. The "Deselect All" buttons make it easy to recover from
 errors, such as if a user selects the wrong superheroes or phases to filter by.
-There is also a message printed if there are no movies to display under their 
+There is also a message printed if there are no movies to display under their
 selected constraints, which also makes it easy to recover from errors.
 	Regarding layout, I used the CSS grid and flexbox to design the layout of
 the filtered list and options, as well as the @media tag to make it responsive.
 Users' eyes should first be drawn to the header, then the movies list, then the
 options, in the correct order of importance.
-	Regarding visual design, I used primary colors to remind users of comic 
+	Regarding visual design, I used primary colors to remind users of comic
 books, since the webpage is about Marvel comics/movies; the same principle
 went into the choice of title font, Bangers, as it looks a lot like comic book
 titles. I choice a sans-serif font, Quicksand, for everything else, as
@@ -33,9 +34,9 @@ sans-serif fonts are easily readable.
 
 Components: Header, FilteredList, List, Movie
 	App.js contains two main components: Header and FilteredList.
-	The Header component contains the logo (a Captain America shield), the 
+	The Header component contains the logo (a Captain America shield), the
 title of the page, and a description.
-	The FilteredList component takes in the movies from movies.json. It 
+	The FilteredList component takes in the movies from movies.json. It
 creates a List component with all of the items from movies, sorted by the
 sortBy function and filtered by the filterItem function. FilteredList also
 contains all of the options for users to filter, sort, and search, including
@@ -52,27 +53,27 @@ creates a div containing a Movie component for each item in the list.
 It returns a div containing all the elements from the movie item to be
 rendered on the page, including the poster image, the title, link to IMDB,
 release date, director, runtime, and box office earnings. There are functions
-(findMonth and findBoxOffice) to format these properly, so the data in the 
+(findMonth and findBoxOffice) to format these properly, so the data in the
 json can be printed nicely!
 
 User Interactions:
-	Users can select a superhero logo to filter the movies by superhero. When 
-a superhero is toggled on/off, the superheroClicked function in FilteredList 
-changes the filter (grayscale or normal) of the image and either adds or 
-removes that superhero from the set of this.state.selectedSuperheroes. The 
+	Users can select a superhero logo to filter the movies by superhero. When
+a superhero is toggled on/off, the superheroClicked function in FilteredList
+changes the filter (grayscale or normal) of the image and either adds or
+removes that superhero from the set of this.state.selectedSuperheroes. The
 FilteredList is then rerendered, filtering the movies by selectedSuperheroes
 in the filterItem function.
 	Users can also toggle a roman numeral (I, II, or III) to filter the movies
 by phase, as the Marvel movies are divided into phases. This works similarly
-to filtering by superhero, changing the opacity of the image and upating the 
+to filtering by superhero, changing the opacity of the image and upating the
 set at this.state.selectedPhases through the phaseClicked function.
 	The deselection buttons toggle selecting or deselecting all options for
 either phases or superheroes. If a user clicks "Deselect All", all the logos
 or phases will be set to grayscale/low opacity, and all options will be removed
-from the respective set. If a user clicks "Select All" (which the deselect 
+from the respective set. If a user clicks "Select All" (which the deselect
 button switches to after "Deselect All" is clicked), all logos will be reset to
 their original style (color and full opacity), and all options will be added
-into the set. These things are done through the superheroDeselected and 
+into the set. These things are done through the superheroDeselected and
 phaseDeselected functions.
 	Users can use the search bar to search for the title or director of any
 movie. The onSearch function in FilteredList updates this.state.search to
@@ -81,8 +82,8 @@ selected superheroes and phases, only returns true for the movies which contain
 the search query in their title or director. filterItem is then used to filter
 the movies, only including those which have the selected superhero, phase, and
 search query.
-	Users can also sort by date, title, runtime, or box office earnings. When 
-users select one of the options, this.state.sort is updated through the 
+	Users can also sort by date, title, runtime, or box office earnings. When
+users select one of the options, this.state.sort is updated through the
 sortSelected function. When the list is rerendered, the sortBy function is
-called, which then uses this.state.sort to sort the list according to the 
+called, which then uses this.state.sort to sort the list according to the
 user's selection.

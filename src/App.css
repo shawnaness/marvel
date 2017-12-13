@@ -76,11 +76,14 @@ h3 {
 
 .list {
   grid-column: 1;
+  display: flex;
+  flex-flow: row wrap;
+
 }
 
 .movie {
   background-color: #ffc72c;
-  width: 90%;
+  width: 45%;
   max-width: 600px;
   margin: auto;
   margin-top: 10px;
@@ -89,8 +92,9 @@ h3 {
   padding-bottom: 20px;
   display: grid;
   grid-template-columns: 40% 60%;
-  grid-template-rows: 20% 80%;
+  grid-template-rows: 60% 40%;
   align-items: center;
+  box-shadow: 5px 5px grey;
 }
 
 .movie-title {
@@ -140,6 +144,11 @@ p {
   margin-bottom: 0px;
 }
 
+.message {
+  margin: auto;
+  margin-top: 10px;
+}
+
 .search {
   margin: 10px;
   padding-left: 2px;
@@ -150,7 +159,6 @@ p {
 
 .button {
   width: 110px;
-  margin-top: 10px;
 }
 
 .dropdown {
@@ -164,10 +172,12 @@ p {
   margin: 10px 50px;
   display: flex;
   flex-wrap: wrap;
+  max-width: 180px;
 }
 
 .select-superhero {
   height: 60px;
+  width: 60px;
 }
 
 .select-superhero:hover {
@@ -189,6 +199,12 @@ p {
   cursor: pointer;
 }
 
+@media (max-width: 1000px) {
+  .movie {
+    width: 90%;
+  }
+}
+
 
 @media (max-width: 600px) {
 
@@ -202,7 +218,6 @@ p {
     grid-column: 1;
     grid-row: 2;
   }
-
 
   .options {
     grid-column: 1;

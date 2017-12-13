@@ -195,9 +195,9 @@ class FilteredList extends Component {
                             id="antman" alt="Ant Man" onClick={this.superheroClicked} />    
                         <img className="select-superhero" src="logos/doctorstrange.png" 
                             id="doctorstrange" alt="Doctor Strange" onClick={this.superheroClicked} />
-                        <Button className="button" bsStyle="primary" 
-                            onClick={this.superheroDeselected}>{this.state.superheroDeselect}</Button>
                     </div>
+                     <Button className="button" bsStyle="primary" 
+                        onClick={this.superheroDeselected}>{this.state.superheroDeselect}</Button>
                     <h3>Phase</h3>
                     <div className="phase-logos">
                         <img className="select-phase" src="phases/I.png" 
@@ -206,9 +206,9 @@ class FilteredList extends Component {
                             id="Phase Two" alt="Phase Two" onClick={this.phaseClicked} />
                         <img className="select-phase" src="phases/III.png"
                         id="Phase Three" alt="Phase Three" onClick={this.phaseClicked} />
-                        <Button className="button" bsStyle="primary" 
-                            onClick={this.phaseDeselected}>{this.state.phaseDeselect}</Button>
                     </div>
+                    <Button className="button" bsStyle="primary" 
+                        onClick={this.phaseDeselected}>{this.state.phaseDeselect}</Button>
                     <h3>Sort</h3>
                     <DropdownButton className="dropdown" bsStyle="primary" id="sort-dropdown" title={this.state.sort}>
                         <MenuItem eventKey="Date" onSelect={this.sortSelected}>Date</MenuItem>

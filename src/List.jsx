@@ -11,7 +11,7 @@ class List extends Component {
     renderList() {
         if (this.props.items.length === 0) {
           const message = 
-            <h3>No movies found. Try altering your search
+            <h3 className="message">No movies found. Try altering your search
             options!</h3>;
           return message;
         }

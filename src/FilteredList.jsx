@@ -24,6 +24,7 @@ class FilteredList extends Component {
         this.state.selectedSuperheroes.add("antman")
         this.state.selectedSuperheroes.add("doctorstrange")
         this.state.selectedSuperheroes.add("guardians")
+        this.state.selectedSuperheroes.add("blackpanther")
 
         this.state.selectedPhases.add("Phase One")
         this.state.selectedPhases.add("Phase Two")
@@ -116,6 +117,7 @@ class FilteredList extends Component {
             this.state.selectedSuperheroes.add("antman")
             this.state.selectedSuperheroes.add("doctorstrange")
             this.state.selectedSuperheroes.add("guardians")
+            this.state.selectedSuperheroes.add("blackpanther")
             this.setState({selectedSuperheroes: this.state.selectedSuperheroes})
             this.setState({superheroDeselect: "Deselect All"})
             for (var y of logos) {
@@ -195,6 +197,8 @@ class FilteredList extends Component {
                             id="antman" alt="Ant Man" onClick={this.superheroClicked} />    
                         <img className="select-superhero" src="logos/doctorstrange.png" 
                             id="doctorstrange" alt="Doctor Strange" onClick={this.superheroClicked} />
+                        <img className="select-superhero" src="logos/blackpanther.png"
+                            id="blackpanther" alt="Black Panther" onClick={this.superheroClicked} />
                     </div>
                      <Button className="button" bsStyle="primary" 
                         onClick={this.superheroDeselected}>{this.state.superheroDeselect}</Button>

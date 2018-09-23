@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
 import Movie from "./Movie";
 
-
 /*
-  The list component will take the list of items passed in as a property
-  and create an HTML list with those item. In this example, we are passing in the 
-  filtered produce list, but this component can be used for other types of items 
-  as long as it has a name.
+  The List component takes the list of items passed in as a property
+  and create an HTML list with those item.
 */
 class List extends Component {
 
+    // returns the message or list of Movie components
     renderList() {
-        const items = this.props.items.map(item => {
-          return <Movie item={item} key={item.name} />
-        });
+        if (this.props.items.length === 0) {
+          const message = 
+            <h3 className="message">No movies found. Try altering your search
+            options!</h3>;
+          return message;
+        }
+        else {
+          const items = this.props.items.map(item => {
+            return <Movie item={item} key={item.name} />
+          });
 
-        return items;
+          return items;
+        }
     }
 
+    // renders the List component
     render() {
         return (
           <div className="list">

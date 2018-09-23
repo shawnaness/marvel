@@ -5,10 +5,14 @@
   "private": true,
   "dependencies": {
     "gh-pages": "^1.0.0",
-    "react": "^16.1.1",
-    "react-bootstrap": "^0.31.5",
-    "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "hoek": "^4.2.1",
+    "npm": "^6.1.0",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-bootstrap": "latest",
+    "react-dom": "latest",
+    "react-overlays": "0.7.0",
+    "react-scripts": "latest"
   },
   "scripts": {
     "predeploy": "npm run build",

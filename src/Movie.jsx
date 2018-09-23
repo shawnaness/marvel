@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
+// the Movie component takes in a single item (movie) as a property.
 class Movie extends Component {
 
+    // matches the month number from the json with a month string to print
     findMonth(number) {
       if (number == 1) {
         return "January";
@@ -30,6 +32,8 @@ class Movie extends Component {
       }
     }
 
+    /* matches the box office number in thej son with the correct string to
+    print - i.e. billion or million */ 
     findBoxOffice(num) {
       if (num > 1000) {
         return (num / 1000) + " billion";
@@ -38,7 +42,7 @@ class Movie extends Component {
       }
     }
 
-
+    // render the Movie component
     render() {
       return (
         <div key={this.props.item.name} className="movie">

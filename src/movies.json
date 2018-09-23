@@ -1,6 +1,6 @@
 [
 {"name": "Iron Man",
-	"poster": "public/posters/ironman1.jpg",
+	"poster": "/public/posters/ironman1.jpg",
 	"superhero": "ironman",
 	"year": "2008",
 	"month": "05",
@@ -11,7 +11,7 @@
 	"imdb": "http://www.imdb.com/title/tt0371746/",
 	"phase": "Phase One"},
 {"name": "The Incredible Hulk",
-	"poster": "/posters/hulk.jpg",
+	"poster": "/public/posters/hulk.jpg",
 	"superhero": "hulk",
 	"year": "2008",
 	"month": "06",

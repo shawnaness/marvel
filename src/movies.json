@@ -1,6 +1,6 @@
 [
 {"name": "Iron Man",
-	"poster": "/posters/ironman1.jpg",
+	"poster": "public/posters/ironman1.jpg",
 	"superhero": "ironman",
 	"year": "2008",
 	"month": "05",

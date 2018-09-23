@@ -179,25 +179,25 @@ class FilteredList extends Component {
                          onChange={this.onSearch} />
                     <h3>Superhero</h3>
                     <div className="superhero-logos">
-                        <img className="select-superhero" src="public/logos/captainamerica.png" 
+                        <img className="select-superhero" src="logos/captainamerica.png" 
                             id="captainamerica" alt="Captain America" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src="public/logos/ironman.png" 
+                        <img className="select-superhero" src="logos/ironman.png" 
                             id="ironman" alt="Iron Man" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src="public/logos/thor.png"
+                        <img className="select-superhero" src="logos/thor.png"
                             id="thor" alt="Thor" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src="public/logos/hulk.png" 
+                        <img className="select-superhero" src="logos/hulk.png" 
                             id="hulk" alt="Hulk" onClick={this.superheroClicked} />  
-                        <img className="select-superhero" src="public/logos/avengers.png" 
+                        <img className="select-superhero" src="logos/avengers.png" 
                             id="avengers" alt="Avengers" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src="public/logos/spiderman.png" 
+                        <img className="select-superhero" src="logos/spiderman.png" 
                             id="spiderman" alt="Spiderman" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src="public/logos/guardians.png" 
+                        <img className="select-superhero" src="logos/guardians.png" 
                             id="guardians" alt="Guardians" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src="public/logos/antman.png" 
+                        <img className="select-superhero" src="logos/antman.png" 
                             id="antman" alt="Ant Man" onClick={this.superheroClicked} />    
-                        <img className="select-superhero" src="public/logos/doctorstrange.png" 
+                        <img className="select-superhero" src="logos/doctorstrange.png" 
                             id="doctorstrange" alt="Doctor Strange" onClick={this.superheroClicked} />
-                        <img className="select-superhero" src="public/logos/blackpanther.png"
+                        <img className="select-superhero" src="logos/blackpanther.png"
                             id="blackpanther" alt="Black Panther" onClick={this.superheroClicked} />
                     </div>
                      <Button className="button" bsStyle="primary" 
